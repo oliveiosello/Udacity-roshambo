@@ -1,24 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Begin Match View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BeginMatchViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i05-nN-ksV">
+                                <rect key="frame" x="107" y="228" width="200" height="450"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6s-VB-FJg" userLabel="Rock">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Rock"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="7PP-Vk-BxO"/>
+                                            <constraint firstAttribute="width" constant="200" id="sGi-6f-1f7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="3" height="3"/>
+                                        <state key="normal" title="ROCK">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                            <color key="titleShadowColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GW8-gS-OfG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Pb-zb-0Wo" userLabel="Paper">
+                                        <rect key="frame" x="0.0" y="150" width="200" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="gLc-NG-TUz"/>
+                                            <constraint firstAttribute="width" constant="200" id="zoa-Ac-dDM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="3" height="3"/>
+                                        <state key="normal" title="PAPER">
+                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                            <color key="titleShadowColor" systemColor="systemTealColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ou2-Oc-Mgq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFU-P9-B70" userLabel="Scissors">
+                                        <rect key="frame" x="0.0" y="300" width="200" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="HN2-24-FKO"/>
+                                            <constraint firstAttribute="height" constant="200" id="wJB-0b-l6T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="3" height="3"/>
+                                        <state key="normal" title="SCISSORS">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                            <color key="titleShadowColor" systemColor="systemYellowColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="GZ6-rA-f6C" kind="presentation" identifier="play" id="UtE-NI-dSA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="Py4-MJ-Y11"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZsH-Kx-se3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i05-nN-ksV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="OEx-u4-JtR"/>
+                            <constraint firstItem="i05-nN-ksV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XOk-vp-8F8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="129" y="94"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="4lD-MQ-CPc">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="GZ6-rA-f6C" userLabel="Results View Controller" customClass="ResultsViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z6t-On-d1E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onT-Zr-32z" userLabel="Play Again">
+                                <rect key="frame" x="117" y="686" width="180" height="62"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="50"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
+                                <state key="normal" title="PLAY AGAIN">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgain" destination="GZ6-rA-f6C" eventType="touchUpInside" id="3nV-ix-QWb"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dhP-1T-4Yc">
+                                <rect key="frame" x="17" y="100" width="380" height="400"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tie" translatesAutoresizingMaskIntoConstraints="NO" id="Cze-Ag-dt4" userLabel="Result of Match">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="C2R-te-9Yw"/>
+                                            <constraint firstAttribute="width" constant="250" id="vR2-yl-QDb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="results text" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qz-7R-SJZ" userLabel="Result of Match">
+                                        <rect key="frame" x="0.0" y="250" width="380" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="CuE-cf-ujB"/>
+                                            <constraint firstAttribute="width" constant="380" id="fMB-B1-9Kc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="3" height="3"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="9D5-Vl-rLK"/>
+                                    <constraint firstAttribute="width" constant="380" id="jre-i2-5u9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sdK-cF-KfP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dhP-1T-4Yc" firstAttribute="top" secondItem="sdK-cF-KfP" secondAttribute="top" constant="100" id="ESO-Y5-eeS"/>
+                            <constraint firstItem="dhP-1T-4Yc" firstAttribute="centerX" secondItem="sdK-cF-KfP" secondAttribute="centerX" id="bzA-Nh-7CM"/>
+                            <constraint firstItem="onT-Zr-32z" firstAttribute="centerX" secondItem="sdK-cF-KfP" secondAttribute="centerX" id="gAi-bJ-2Qm"/>
+                            <constraint firstItem="sdK-cF-KfP" firstAttribute="bottom" secondItem="onT-Zr-32z" secondAttribute="bottom" constant="60" id="mZo-tq-eqv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultsImage" destination="Cze-Ag-dt4" id="UMB-Oy-XJ7"/>
+                        <outlet property="resultsLabel" destination="5qz-7R-SJZ" id="wl5-X0-SeN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZId-WF-wa9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tie" width="91.5" height="100"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
